@@ -421,7 +421,7 @@
              class="glow-btn w-full sm:w-auto px-8 py-4 rounded-full text-white font-display font-700 text-lg">
             Ver Catálogo →
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com" target="_blank" rel="noopener" class="outline-btn w-full sm:w-auto px-8 py-4 rounded-full font-display font-600 text-base">
+          <a href="mailto:barapagoficial@gmail.com" class="outline-btn w-full sm:w-auto px-8 py-4 rounded-full font-display font-600 text-base">
             barapagoficial@gmail.com
           </a>
         </div>
@@ -506,7 +506,7 @@
             </li>
           </ul>
 
-          <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com&amp;su=Quiero%20una%20Web%20de%20Negocios" target="_blank" rel="noopener" class="mt-8 block glow-btn text-center py-3.5 rounded-2xl text-white font-display font-700 text-sm">
+          <a href="mailto:barapagoficial@gmail.com?subject=Quiero%20una%20Web%20de%20Negocios" class="mt-8 block glow-btn text-center py-3.5 rounded-2xl text-white font-display font-700 text-sm">
             Quiero esta web →
           </a>
         </div>
@@ -553,7 +553,7 @@
             </li>
           </ul>
 
-          <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com&amp;su=Quiero%20una%20Invitaci%C3%B3n%20Digital" target="_blank" rel="noopener" class="mt-8 block outline-btn text-center py-3.5 rounded-2xl font-display font-700 text-sm">
+          <a href="mailto:barapagoficial@gmail.com?subject=Quiero%20una%20Invitaci%C3%B3n%20Digital" class="mt-8 block outline-btn text-center py-3.5 rounded-2xl font-display font-700 text-sm">
             Quiero mi invitación →
           </a>
         </div>
@@ -614,7 +614,9 @@
 
       <p class="text-center text-slate-500 text-sm font-body mt-8 fade-up">
         ¿Quieres ver una demo en vivo? 
-        <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com&amp;su=Demo%20en%20vivo%20BaraPag" target="_blank" rel="noopener" class="text-cyan hover:underline transition-colors">Escríbenos y te la mostramos →</a>
+        <a href="mailto:barapagoficial@gmail.com?subject=Demo%20en%20vivo%20BaraPag" class="text-cyan hover:underline transition-colors">
+          Escríbenos y te la mostramos →
+        </a>
       </p>
     </div>
   </section>
@@ -668,7 +670,7 @@
 
       <div class="glass-card rounded-3xl p-8 text-left space-y-5">
 
-        <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-2xl glass-card border hover:bg-white/[0.07] transition-colors group">
+        <a href="mailto:barapagoficial@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl glass-card border hover:bg-white/[0.07] transition-colors group">
           <div class="w-11 h-11 rounded-xl glass-card-accent flex items-center justify-center flex-shrink-0 text-lg">📧</div>
           <div class="flex-1">
             <div class="font-display font-700 text-white text-sm">Correo electrónico</div>
@@ -938,7 +940,7 @@
       <p class="text-slate-500 text-xs font-body text-center">
         © 2026 BaraPag · Páginas Web Super Baratas · Medellín, Colombia 🇨🇴
       </p>
-      <a href="https://mail.google.com/mail/?view=cm&amp;to=barapagoficial@gmail.com" target="_blank" rel="noopener" class="text-slate-500 hover:text-cyan text-xs font-body transition-colors">
+      <a href="mailto:barapagoficial@gmail.com" class="text-slate-500 hover:text-cyan text-xs font-body transition-colors">
         barapagoficial@gmail.com
       </a>
     </div>
@@ -950,8 +952,10 @@
     // Hamburger toggle
     const btn = document.getElementById('hamburger-btn');
     const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => menu.classList.toggle('open'));
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+    if (btn && menu) {
+      btn.addEventListener('click', () => menu.classList.toggle('open'));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+    }
 
     // Scroll fade-in
     const observer = new IntersectionObserver((entries) => {
@@ -976,10 +980,14 @@
 
         if (distance < 0) {
           // Si ya pasó la fecha, mostrar 0
-          document.getElementById('cd-d').innerHTML = '0';
-          document.getElementById('cd-h').innerHTML = '0';
-          document.getElementById('cd-m').innerHTML = '0';
-          document.getElementById('cd-s').innerHTML = '0';
+          const dEl = document.getElementById('cd-d');
+          const hEl = document.getElementById('cd-h');
+          const mEl = document.getElementById('cd-m');
+          const sEl = document.getElementById('cd-s');
+          if (dEl) dEl.innerHTML = '0';
+          if (hEl) hEl.innerHTML = '0';
+          if (mEl) mEl.innerHTML = '0';
+          if (sEl) sEl.innerHTML = '0';
           if (cdInterval) clearInterval(cdInterval);
           return;
         }
@@ -989,10 +997,14 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById('cd-d').innerHTML = days;
-        document.getElementById('cd-h').innerHTML = hours < 10 ? '0' + hours : hours;
-        document.getElementById('cd-m').innerHTML = minutes < 10 ? '0' + minutes : minutes;
-        document.getElementById('cd-s').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+        const dEl = document.getElementById('cd-d');
+        const hEl = document.getElementById('cd-h');
+        const mEl = document.getElementById('cd-m');
+        const sEl = document.getElementById('cd-s');
+        if (dEl) dEl.innerHTML = days;
+        if (hEl) hEl.innerHTML = hours < 10 ? '0' + hours : hours;
+        if (mEl) mEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
+        if (sEl) sEl.innerHTML = seconds < 10 ? '0' + seconds : seconds;
       }
 
       updateCountdown();
