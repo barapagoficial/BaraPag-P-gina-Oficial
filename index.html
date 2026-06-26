@@ -170,6 +170,7 @@
             font-family: 'Syne', sans-serif;
             letter-spacing: -0.02em;
             line-height: 1.08;
+            text-wrap: balance;
         }
 
         /* ── Cursor glow optimizado ── */
@@ -850,6 +851,28 @@
                 animation-play-state: running;
             }
         }
+
+        /* ── Mejoras móviles adicionales ── */
+        @media (max-width: 640px) {
+            .hero-price {
+                font-size: clamp(2rem, 8vw, 2.5rem) !important;
+            }
+            .service-card {
+                padding: 1.5rem !important;
+            }
+            .contact-email-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .contact-email-box button {
+                width: 100%;
+                justify-content: center;
+            }
+            .video-deco-2 {
+                right: 2% !important;
+                bottom: 8% !important;
+            }
+        }
     </style>
 </head>
 <body class="relative">
@@ -916,15 +939,15 @@
                         <span>Medellín <span class="co-flag"></span> · Sin mensualidades</span>
                     </div>
 
-                    <h1 id="hero-heading" class="reveal font-display font-800 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-white mb-6" style="transition-delay:0.1s">
+                    <h1 id="hero-heading" class="reveal font-display font-800 text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-white mb-6" style="transition-delay:0.1s">
                         Tu negocio merece
                         <span class="block grad-text">estar en internet</span>
-                        <span class="block text-3xl sm:text-4xl lg:text-5xl mt-3 text-slate-300">
+                        <span class="block text-2xl sm:text-3xl lg:text-5xl mt-3 text-slate-300 hero-price">
                             desde solo <span class="grad-text-soft">$60.000 COP</span>
                         </span>
                     </h1>
 
-                    <p class="reveal font-body text-base sm:text-lg text-slate-400 max-w-lg mb-8 leading-relaxed" style="transition-delay:0.2s">
+                    <p class="reveal font-body text-sm sm:text-base lg:text-lg text-slate-400 max-w-lg mb-8 leading-relaxed" style="transition-delay:0.2s">
                         Creamos páginas web profesionales e invitaciones digitales que enamoran.
                         <span class="text-cyan-soft">Entrega en 48 horas, pago único, sin mensualidades ni letra pequeña.</span>
                     </p>
@@ -963,7 +986,7 @@
                         <span class="dot"></span>
                         <span>⚡ Entrega 48h</span>
                     </div>
-                    <div class="video-deco deco-2" aria-hidden="true">
+                    <div class="video-deco deco-2 video-deco-2" aria-hidden="true">
                         <span class="dot" style="background:#8b5cf6;box-shadow:0 0 10px #8b5cf6"></span>
                         <span>100% responsive</span>
                     </div>
@@ -1027,7 +1050,7 @@
             <h2 id="servicios-heading" class="font-display font-800 text-3xl sm:text-4xl lg:text-6xl text-white mt-4">
                 Lo que <span class="grad-text">ofrecemos</span>
             </h2>
-            <p class="text-slate-400 mt-4 max-w-xl mx-auto font-body text-base">
+            <p class="text-slate-400 mt-4 max-w-xl mx-auto font-body text-sm sm:text-base">
                 Soluciones digitales a precio justo, creadas con pasión desde Medellín <span class="co-flag"></span>.
             </p>
         </div>
@@ -1035,7 +1058,7 @@
         <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
 
             <!-- Web de Negocios -->
-            <div class="card-3d glass rounded-3xl p-8 lg:p-10 reveal relative overflow-hidden group">
+            <div class="card-3d glass rounded-3xl p-6 sm:p-8 lg:p-10 reveal relative overflow-hidden group service-card">
                 <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-cyan/8 blur-3xl group-hover:bg-cyan/16 transition-colors duration-500" aria-hidden="true"></div>
                 <div class="relative">
                     <div class="flex items-start justify-between mb-6">
@@ -1064,7 +1087,7 @@
             </div>
 
             <!-- Invitación Digital -->
-            <div class="card-3d glass rounded-3xl p-8 lg:p-10 reveal relative overflow-hidden group" style="transition-delay:0.15s">
+            <div class="card-3d glass rounded-3xl p-6 sm:p-8 lg:p-10 reveal relative overflow-hidden group service-card" style="transition-delay:0.15s">
                 <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-violet/8 blur-3xl group-hover:bg-violet/16 transition-colors duration-500" aria-hidden="true"></div>
                 <div class="relative">
                     <div class="flex items-start justify-between mb-6">
@@ -1109,7 +1132,7 @@
                     Calidad premium,<br/>
                     <span class="grad-text">precio justo.</span>
                 </h2>
-                <p class="text-slate-400 mt-6 font-body leading-relaxed">
+                <p class="text-slate-400 mt-6 font-body text-sm sm:text-base leading-relaxed">
                     Somos un equipo familiar en Medellín apasionado por la tecnología.
                     Entendemos el valor de tu dinero y por eso ofrecemos páginas web de altísima calidad
                     a un precio que ningún otro ofrece, sin sacrificar diseño ni funcionalidad.
@@ -1123,10 +1146,10 @@
             </div>
 
             <div class="reveal grid grid-cols-2 gap-4" style="transition-delay:0.15s">
-                <div class="glass rounded-3xl p-8 text-center relative overflow-hidden group card-3d"><div class="absolute inset-0 bg-gradient-to-br from-blue/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">100%</div><div class="text-sm text-slate-400">Satisfacción</div></div></div>
-                <div class="glass rounded-3xl p-8 text-center relative overflow-hidden group card-3d mt-8"><div class="absolute inset-0 bg-gradient-to-br from-cyan/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">48h</div><div class="text-sm text-slate-400">Tiempo récord</div></div></div>
-                <div class="glass rounded-3xl p-8 text-center relative overflow-hidden group card-3d"><div class="absolute inset-0 bg-gradient-to-br from-violet/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">$0</div><div class="text-sm text-slate-400">Mensualidades</div></div></div>
-                <div class="glass rounded-3xl p-8 text-center relative overflow-hidden group card-3d mt-8"><div class="absolute inset-0 bg-gradient-to-br from-pink-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">24/7</div><div class="text-sm text-slate-400">Soporte activo</div></div></div>
+                <div class="glass rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden group card-3d"><div class="absolute inset-0 bg-gradient-to-br from-blue/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">100%</div><div class="text-sm text-slate-400">Satisfacción</div></div></div>
+                <div class="glass rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden group card-3d mt-8"><div class="absolute inset-0 bg-gradient-to-br from-cyan/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">48h</div><div class="text-sm text-slate-400">Tiempo récord</div></div></div>
+                <div class="glass rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden group card-3d"><div class="absolute inset-0 bg-gradient-to-br from-violet/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">$0</div><div class="text-sm text-slate-400">Mensualidades</div></div></div>
+                <div class="glass rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden group card-3d mt-8"><div class="absolute inset-0 bg-gradient-to-br from-pink-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="relative"><div class="font-display font-800 text-5xl lg:text-6xl grad-text mb-2">24/7</div><div class="text-sm text-slate-400">Soporte activo</div></div></div>
             </div>
 
         </div>
@@ -1138,7 +1161,7 @@
 <!-- ===== CONTACTO ===== -->
 <section id="contacto" class="relative z-10 py-24 lg:py-32 px-5 lg:px-8" aria-labelledby="contacto-heading">
     <div class="max-w-3xl mx-auto">
-        <div class="reveal glass-strong rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden">
+        <div class="reveal glass-strong rounded-3xl p-6 sm:p-8 lg:p-12 text-center relative overflow-hidden">
             <div class="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-blue/15 blur-3xl" aria-hidden="true"></div>
             <div class="absolute -bottom-32 -right-32 w-64 h-64 rounded-full bg-cyan/15 blur-3xl" aria-hidden="true"></div>
             <div class="relative">
@@ -1146,7 +1169,7 @@
                 <h2 id="contacto-heading" class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-4">
                     ¿Listo para <span class="grad-text">empezar</span>?
                 </h2>
-                <p class="text-slate-400 font-body mb-8 max-w-lg mx-auto text-base">
+                <p class="text-slate-400 font-body mb-8 max-w-lg mx-auto text-sm sm:text-base">
                     Cuéntanos tu idea y en menos de 24 horas te enviamos una propuesta personalizada sin compromiso.
                 </p>
 
@@ -1154,7 +1177,7 @@
                 <div class="inline-flex flex-col items-center gap-4 p-6 rounded-2xl glass w-full max-w-md">
                     <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue to-cyan flex items-center justify-center text-2xl shadow-lg shadow-cyan/25" aria-hidden="true">📧</div>
                     <div class="font-display font-700 text-white text-base">Escribe a este correo electrónico para más información</div>
-                    <div class="flex items-center gap-3 w-full">
+                    <div class="flex items-center gap-3 w-full contact-email-box">
                         <div class="flex-1 bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-cyan font-mono text-sm text-center select-all break-all">
                             barapagoficial@gmail.com
                         </div>
@@ -1163,6 +1186,16 @@
                             Copiar
                         </button>
                     </div>
+                </div>
+
+                <!-- TikTok contact -->
+                <div class="mt-6 text-center">
+                    <a href="https://tiktok.com/@barapagoficial" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan transition-colors glass px-5 py-3 rounded-xl group">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                        <span class="font-medium">O escríbenos directamente por TikTok: <strong>@barapagoficial</strong></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1204,7 +1237,6 @@
                 btn.setAttribute('aria-expanded', isOpen);
             });
             menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-            // Cerrar con tecla Escape
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
             });
@@ -1306,7 +1338,6 @@
                     showToast('📧 Escríbenos a: <strong>barapagoficial@gmail.com</strong>', 'info', 5000);
                 });
             } else {
-                // Fallback para navegadores antiguos
                 const textarea = document.createElement('textarea');
                 textarea.value = email;
                 textarea.style.position = 'fixed';
